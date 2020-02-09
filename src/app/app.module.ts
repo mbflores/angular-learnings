@@ -7,12 +7,14 @@ import {CoursesComponent} from './courses/courses.component';
 import { CourseComponent } from './course/course.component';
 import {CoursesService} from './courses/courses.service';
 import {FormsModule} from '@angular/forms';
+import { SummaryPipe } from './summary.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     CoursesComponent,
-    CourseComponent
+    CourseComponent,
+    SummaryPipe
   ],
   imports: [
     BrowserModule,
