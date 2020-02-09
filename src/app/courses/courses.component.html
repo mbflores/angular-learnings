@@ -1,0 +1,11 @@
+<h1>Hello Angular, {{firstName}} is here</h1>
+<ul>
+  <li [class.alert-dark]="isActive" *ngFor="let course of courses">{{course}}</li>
+</ul>
+
+<div (click)="divClicked()">
+  <button class="btn btn-primary" (click)="btnClick($event)">Sample</button>
+</div>
+
+<input (keyup.enter)="enterPressed()"/>
+<app-course></app-course>

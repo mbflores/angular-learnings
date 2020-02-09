@@ -6,7 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./course.component.css']
 })
 export class CourseComponent implements OnInit {
-
+  email: string;
+  pressedEnter(){
+    console.log(this.email);
+  }
+  btnClick($event: MouseEvent) {
+    console.log('btn clicked');
+  }
+  divClicked() {
+    console.log('div clicked');
+  }
   constructor() { }
 
   ngOnInit() {

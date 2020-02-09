@@ -1,1 +1,5 @@
-<p>course works!</p>
+<div (click)="divClicked()">
+  <button class="btn btn-primary" (click)="btnClick($event)">Sample</button>
+</div>
+<input [(ngModel)]="email" (keyup.enter)="pressedEnter()"/>
+{{email}}
