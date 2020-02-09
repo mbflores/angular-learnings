@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {CoursesService} from './courses.service';
+import {Course, CoursesService} from './courses.service';
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'courses',
@@ -9,7 +9,7 @@ export class CoursesComponent {
   firstName: string = 'Mel Bryan Flores'
   isActive: boolean = true;
 
-  courses: string[];
+  courses: Course[];
   constructor(service: CoursesService) {
     this.courses = service.getCourses();
   }
