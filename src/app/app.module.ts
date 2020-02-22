@@ -9,8 +9,7 @@ import {CoursesService} from './courses/courses.service';
 import {FormsModule} from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
-import { AppInputFormatDirective } from './app-input-format.directive';
-import { ContactFormComponent } from './contact-form/contact-form.component';
+import { InputFormatDirective } from './input-format.directive';
 
 @NgModule({
   declarations: [
@@ -19,8 +18,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     CourseComponent,
     SummaryPipe,
     FavoriteComponent,
-    AppInputFormatDirective,
-    ContactFormComponent
+    InputFormatDirective,
   ],
   imports: [
     BrowserModule,
