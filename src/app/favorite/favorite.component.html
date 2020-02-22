@@ -1,6 +1,7 @@
-<span class="glyphicon"
-[class.glyphicon-star]="isFavorite"
-[class.glyphicon-star-empty]="!isFavorite"
-(click)="Liked()"
+<h1>{{favorite.title}}</h1><span class="glyphicon"
+[class.glyphicon-star]="favorite.isSelected"
+[class.glyphicon-star-empty]="!favorite.isSelected"
+(click)="Liked($event)"
 ></span>
-{{count}}
+{{favorite.count}}
+

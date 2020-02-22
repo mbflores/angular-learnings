@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import {Favorite} from '../app.component';
 
 @Component({
   selector: 'app-favorite',
@@ -6,22 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./favorite.component.css']
 })
 export class FavoriteComponent implements OnInit {
-  isFavorite: boolean;
-  count: number;
+  // tslint:disable-next-line:no-input-rename
+  @Input('favorite') favorite: Favorite;
+  @Output('favoriteChanged') favoriteChanged = new EventEmitter();
+
   constructor() {
-    this.isFavorite = false;
-    this.count = 10;
     }
 
     Liked() {
-      if (this.isFavorite) {
-      this.count--;
+      if (this.favorite.isSelected) {
+      this.favorite.count--;
     } else {
-      this.count++;
+        this.favorite.count++;
     }
-      this.isFavorite = !this.isFavorite;
-      console.log(this.count);
-  }
+      this.favorite.isSelected = !this.favorite.isSelected;
+      console.log(this.favorite.count);
+      this.favoriteChanged.emit(this.favorite.isSelected);
+
+    }
 
   ngOnInit() {
   }

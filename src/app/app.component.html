@@ -1,2 +1,28 @@
-<courses></courses>
-<app-favorite></app-favorite>
+<!--<courses></courses>-->
+<!--<app-favorite [favorite]="favorite" (favoriteChanged)="onFavoriteChanged($event)"></app-favorite>-->
+
+
+<!--<ul class="nav nav-pills">-->
+<!--  <li [class.active]="viewMode=='map'"><a (click)="viewMode = 'map'">Map View</a></li>-->
+<!--  <li [class.active]="viewMode=='list'"><a (click)="viewMode = 'list'">List View</a></li>-->
+<!--</ul>-->
+
+
+<!--<div [ngSwitch]="viewMode">-->
+<!--  <div *ngSwitchCase="'map'">Map View</div>-->
+<!--  <div *ngSwitchCase="'list'">List View</div>-->
+<!--</div>-->
+<!--<button class="btn btn-primary" (click)="onAdd()">-->
+<!--  ADD-->
+<!--</button>-->
+<!--<button class="btn btn-primary" (click)="loadCourses()">-->
+<!--  Load Courses-->
+<!--</button>-->
+<!--<ul>-->
+<!--  <li *ngFor="let course of courses; trackBy: trackCourse">-->
+<!--      {{i}} - {{course.name}}-->
+<!--    <button (click)="onDelete(course)">Delete</button>-->
+<!--  </li>-->
+<!--</ul>-->
+
+<input type="text" [appAppInputFormat]="'uppercase'">

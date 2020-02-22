@@ -9,6 +9,8 @@ import {CoursesService} from './courses/courses.service';
 import {FormsModule} from '@angular/forms';
 import { SummaryPipe } from './summary.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { AppInputFormatDirective } from './app-input-format.directive';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { FavoriteComponent } from './favorite/favorite.component';
     CoursesComponent,
     CourseComponent,
     SummaryPipe,
-    FavoriteComponent
+    FavoriteComponent,
+    AppInputFormatDirective,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
