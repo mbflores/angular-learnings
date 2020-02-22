@@ -1,0 +1,71 @@
+<form #f='ngForm' (ngSubmit)="submit(f)">
+  <div ngModelGroup="contact" #contact='ngModelGroup'>
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input
+        name="firstName"
+        required
+        ngModel
+        #firstName='ngModel'
+        type="text"
+        minlength="3"
+        maxlength="10"
+        class="form-control"
+        id="firstName"
+      />
+    </div>
+    <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+      <div *ngIf="firstName.errors?.required">First Name is required</div>
+      <div *ngIf="firstName.errors?.minlength">First Name should be
+        atleast {{firstName.errors.minlength.requiredLength}} characters
+      </div>
+    </div>
+    {{firstName.errors | json}}
+
+
+    <div class="form-group">
+      <label for="comment">Comment</label>
+      <textarea
+        name="coment"
+        ngModel
+        #comment='ngModel'
+        id="comment"
+        cols="30" rows="10"
+        class="form-control"
+        required>
+
+    </textarea>
+    </div>
+    <div class="form-group">
+      <label for="contactMethod"></label>
+      <select name="contactMethod"
+              id="contactMethod"
+              ngModel
+              #contactMethod = 'ngModel'
+              class="form-control">
+        <option selected="selected" value="">Please Select</option>
+        <option *ngFor="let contacts of contactMethods" value="{{contacts.id}}">{{contacts.name}}</option>
+      </select>
+    </div>
+
+    <div class="form-group" *ngFor="let contacts of contactMethods">
+      <label >
+        <input type="radio" ngModel name="contactMethod1" [value]="contacts.id" >
+        {{contacts.name}}
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input
+          type="checkbox"
+          ngModel
+          #isSubscribed='ngModel'
+          name="isSubscribed">
+      </label>
+      is subscribed?
+    </div>
+  </div>
+  <p>{{f.value|json}}</p>
+  <button class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+
+</form>
