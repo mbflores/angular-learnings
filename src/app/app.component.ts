@@ -1,6 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import {last} from "rxjs/operators";
 import  *  as  data  from  './courses.json';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+
+interface Post {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -8,9 +16,17 @@ import  *  as  data  from  './courses.json';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements  OnInit{
+  posts: Post[];
+
   ngOnInit(): void {
 
   }
+  constructor(http: HttpClient) {
+    http.get('http://jsonplaceholder.typicode.com/posts').subscribe(response => {
+      this.posts = response;
+    });
+  }
+
   favorite: Favorite = {
     isSelected: false,
     count: 10,
