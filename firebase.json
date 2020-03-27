@@ -1,0 +1,20 @@
+{
+  "hosting": {
+    "public": "dist",
+    "site": "bryan-demo-bbb05",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "database": {
+    "rules": "database.rules.json"
+  }
+}
